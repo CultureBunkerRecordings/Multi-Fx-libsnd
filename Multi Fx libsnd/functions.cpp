@@ -11,11 +11,18 @@ using namespace std;
 // Function to print the RMS to the screen. The return is a float.
 ////inputSignal: Pointer to an array of floating point audio samples.
 //numOutputSamples: number of audio samples including delayTimeInSamples
-void PRINTOBJECT::getRMS()
-{
-	inputSignal = 0;
-	numOutputSamples = 0;
-}
+//PRINTOBJECT::PRINTOBJECT(float* inputSignal, int numOutputSamples, int numToPrint)
+//{
+	
+	//	inputSignal = 0;
+		//numOutputSamples = 0;
+		//numToPrint = 0;
+	    
+//}
+
+//PRINTOBJECT::~PRINTOBJECT()
+//{
+//}
 
 float PRINTOBJECT::getRMS(float* inputSignal, int numOutputSamples)
 {
@@ -43,11 +50,6 @@ float PRINTOBJECT::getRMS(float* inputSignal, int numOutputSamples)
 
 // Function to print samples to screen. The return is void.
 
-void PRINTOBJECT::printsamples()
-{
-	inputSignal = 0;
-	numToPrint = 0;
-}
 
 void PRINTOBJECT::printsamples(float* inputSignal, int numToPrint)
 {
@@ -64,12 +66,20 @@ void PRINTOBJECT::printsamples(float* inputSignal, int numToPrint)
 };
 //----------------------------------------------------------------------------------------
 // Function to scale the signal.The return is void, 
-void FX::scaleSignal()
+/*FX::FX(float*inputSignal, int numOutputSamples, int modfreq, int fadeTimeInSamples,
+	float threshold, float scale, int delayTimeInSamples)
 {
 	inputSignal = 0;
 	numOutputSamples = 0;
 	scale = 0;
+	threshold = 0;
+	fadeTimeInSamples = 0;
+	modfreq = 0;
 };
+
+FX::~FX()
+{
+}*/
 void FX::scaleSignal(float* inputSignal, int numOutputSamples, float scale)
 {
 	/* A for loop is used to until 'numSamples' (length of audio file) is met*/
@@ -140,13 +150,6 @@ inputSignal: pointer to an array of floating point audio samples
 numOutputSamples: number of audio samples including delayTimeInSamples
 threshold: declared by user (the amplitude at which clipping occurs)
 */
-void FX::getSignalWithDistortion()
-{
-	inputSignal = 0;
-	numOutputSamples = 0;
-	threshold = 0;
-}
-
 float* FX::getSignalWithDistortion(float* inputSignal, int numOutputSamples, float threshold)
 {
 	long int i;
@@ -186,11 +189,7 @@ float* FX::getSignalWithDistortion(float* inputSignal, int numOutputSamples, flo
 
 inputSignal: pointer to an array of floating point audio samples
 fadeTimeInSamples: declared by user at runtime, number of samples in fade */
-void FX::getSignalWithFadein()
-{
-	inputSignal = 0;
-	fadeTimeInSamples = 0;
-}
+
 float* FX::getSignalWithFadein(float* inputSignal, int fadeTimeInSamples)
 {
 	/* float 'A' (amplitude) is initialised*/

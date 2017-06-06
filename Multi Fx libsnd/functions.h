@@ -8,18 +8,35 @@
 class PRINTOBJECT
 {
 public:
-	//default constructor
-	void getRMS();
-	//overload constructor
+
 	float getRMS(float*, int);
-	//default construct
-	void printsamples();
-	//overload construct
 	void printsamples(float*, int);
+
 private:
 	float* inputSignal;
 	int numOutputSamples;
 	int numToPrint;
+};
+
+class FX
+{
+
+public:
+	float* getSignalWithFilter(float*, int);
+	float* getSignalWithAmpmod(float*, int, int);
+	float* getSignalWithFadein(float*, int);
+	float* getSignalWithDistortion(float*, int, float);
+	void scaleSignal(float*, int, float);
+	float* getSignalWithDelay(float*, int, int);
+private:
+	float*inputSignal;
+	int numOutputSamples;
+	int modfreq;
+	int fadeTimeInSamples;
+	float threshold;
+	float scale;
+	int delayTimeInSamples;
+
 };
 
 class WAVINOUT
@@ -36,7 +53,7 @@ public:
 
 	~WAVINOUT()
 	{
-
+		delete[] inputBuffer;
 	}
 
 	void wavread();
@@ -47,41 +64,14 @@ public:
 private:
 	const char *fileName;
 	const char *fileNameOut;
-
 	int bufferLength;
-
 	float *inputBuffer;
 	int fs;
 	int numSamples;
 };
 
 
-class FX
-{
-public:
-	float* getSignalWithFilter(float*, int);
-	float* getSignalWithAmpmod(float*, int, int);
 
-	void getSignalWithFadein();
-	float* getSignalWithFadein(float*, int);
-
-	void getSignalWithDistortion();
-	float* getSignalWithDistortion(float*, int, float);
-
-	void scaleSignal();
-	void scaleSignal(float*, int, float);
-
-	float* getSignalWithDelay(float*, int, int);
-private:
-	float*inputSignal;
-	int numOutputSamples;
-	int modfreq;
-	int fadeTimeInSamples;
-	float threshold;
-	float scale;
-	int delayTimeInSamples;
-
-};
 
 
 
