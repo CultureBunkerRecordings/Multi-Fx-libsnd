@@ -1,6 +1,9 @@
-﻿  Source.cpp
+﻿  functions.cpp
+c:\users\william\documents\audio software development\multi fx libsnd\multi fx libsnd\functions.cpp(315): warning C4244: 'initializing': conversion from 'sf_count_t' to 'long', possible loss of data
+c:\users\william\documents\audio software development\multi fx libsnd\multi fx libsnd\functions.cpp(368): warning C4244: 'initializing': conversion from 'sf_count_t' to 'long', possible loss of data
   Generating Code...
-  Skipping... (no relevant changes detected)
-  functions.cpp
+  Compiling...
+  Source.cpp
+  Generating Code...
   Multi Fx libsnd.vcxproj -> C:\Users\William\Documents\Audio software Development\Multi Fx libsnd\x64\Debug\Multi Fx libsnd.exe
   Multi Fx libsnd.vcxproj -> C:\Users\William\Documents\Audio software Development\Multi Fx libsnd\x64\Debug\Multi Fx libsnd.pdb (Partial PDB)

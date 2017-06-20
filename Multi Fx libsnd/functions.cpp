@@ -11,18 +11,8 @@ using namespace std;
 // Function to print the RMS to the screen. The return is a float.
 ////inputSignal: Pointer to an array of floating point audio samples.
 //numOutputSamples: number of audio samples including delayTimeInSamples
-//PRINTOBJECT::PRINTOBJECT(float* inputSignal, int numOutputSamples, int numToPrint)
-//{
-	
-	//	inputSignal = 0;
-		//numOutputSamples = 0;
-		//numToPrint = 0;
-	    
-//}
 
-//PRINTOBJECT::~PRINTOBJECT()
-//{
-//}
+
 
 float PRINTOBJECT::getRMS(float* inputSignal, int numOutputSamples)
 {
@@ -66,20 +56,7 @@ void PRINTOBJECT::printsamples(float* inputSignal, int numToPrint)
 };
 //----------------------------------------------------------------------------------------
 // Function to scale the signal.The return is void, 
-/*FX::FX(float*inputSignal, int numOutputSamples, int modfreq, int fadeTimeInSamples,
-	float threshold, float scale, int delayTimeInSamples)
-{
-	inputSignal = 0;
-	numOutputSamples = 0;
-	scale = 0;
-	threshold = 0;
-	fadeTimeInSamples = 0;
-	modfreq = 0;
-};
 
-FX::~FX()
-{
-}*/
 void FX::scaleSignal(float* inputSignal, int numOutputSamples, float scale)
 {
 	/* A for loop is used to until 'numSamples' (length of audio file) is met*/
@@ -287,12 +264,7 @@ float* FX::getSignalWithFilter(float*inputSignal, int numOutputSamples)
 	return inputSignal;
 };
 //----------Read Wave Files----------
-void WAVINOUT::wavread()
-{
-	numSamples = 0;
-	fs = 0;
-	fileName = 0;
-};
+
 float* WAVINOUT::wavread(int &numSamples, int &fs, const char *fileName)
 {
 	// Open sound file
@@ -358,13 +330,7 @@ float* WAVINOUT::wavread(int &numSamples, int &fs, const char *fileName)
 }
 
 //----------Write Wave Files---------- 
-void WAVINOUT::wavwrite()
-{
-	inputBuffer = 0;
-	bufferLength = 0;
-	fs = 0;
-	fileNameOut = 0;
-}
+
 void WAVINOUT::wavwrite(float *inputBuffer, int bufferLength, int fs, const char *fileNameOut)
 {
 	// Set file settings, 16bit Mono PCM, sample frequency 44100

@@ -34,7 +34,7 @@ class FX
 {
 public:
 	FX()
-		:inputSignal(0), numOutputSamples(0), modfreq(0), fadeTimeInSamples(0), threshold(NULL), scale(NULL), delayTimeInSamples(0)
+		:inputSignal(0), numOutputSamples(0), modfreq(0), fadeTimeInSamples(0), threshold(0), scale(0), delayTimeInSamples(0)
 	{
 		cout << "object created..\n";
 	}
@@ -80,9 +80,7 @@ public:
 		delete[] inputBuffer;
 	}
 
-	void wavread();
 	float* wavread(int&, int&, const char*);
-	void wavwrite();
 	void wavwrite(float *, int, int, const char *);
 
 private:
